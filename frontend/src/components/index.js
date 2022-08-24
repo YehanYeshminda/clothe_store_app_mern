@@ -6,3 +6,4 @@ export { default as ProductCards } from './ProductCards';
 export { default as Homepage } from './Homepage';
 export { default as ProductDetails } from './ProductDetails';
 export { default as Signup } from './SignupPage';
+export { default as Cart } from './CartAbs';

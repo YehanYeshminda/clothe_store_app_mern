@@ -1,5 +1,5 @@
 export const InitialState = {
 	isLoggedIn: false,
 	user: null,
-	ItemProducts: [],
+	ItemProducts: null,
 };

@@ -242,16 +242,6 @@ const SignupPage = () => {
 							placeholder="Post-code"
 						/>
 
-						<input
-							onChange={handleChange}
-							required
-							value={user.password}
-							type="password"
-							name="password"
-							className="bg-gray-100 placeholder:text-gray-400 w-full h-10 rounded-lg text-black hover:bg-slate-200 hover:drop-shadow-lg placeholder:text-center"
-							placeholder="Password"
-						/>
-
 						<button
 							onClick={() => {
 								setIsLoggedIn();

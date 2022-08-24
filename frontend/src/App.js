@@ -1,4 +1,4 @@
-import { Navbar, Homepage, ProductDetails, Signup } from './components';
+import { Navbar, Homepage, ProductDetails, Signup, Cart } from './components';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
 				<Route path="/" element={<Homepage />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route path="/product/:id" element={<ProductDetails />} />
+				<Route path="/userCart" element={<Cart />} />
 			</Routes>
 		</>
 	);

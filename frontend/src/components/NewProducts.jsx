@@ -30,23 +30,7 @@ const NewProducts = () => {
 			<div className="grid grid-cols-3 gap-4 w-full h-[70vh] mt-10">
 				{products &&
 					products.map((ele) => {
-						const {
-							_id,
-							ProductName,
-							ProductPrice,
-							ProductImage,
-							ProductCatergory,
-						} = ele;
-
-						return (
-							<ProductCards
-								id={_id}
-								ProductName={ProductName}
-								ProductPrice={ProductPrice}
-								ProductImage={ProductImage}
-								ProductCatergory={ProductCatergory}
-							/>
-						);
+						return <ProductCards product={ele} />;
 					})}
 			</div>
 		</div>

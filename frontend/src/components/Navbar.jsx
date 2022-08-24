@@ -2,9 +2,12 @@ import Logo from '../assets/logo.png';
 import { MdSearch, MdPersonPin, MdShoppingCart } from 'react-icons/md';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../store/StateProvider';
 
 const Navbar = () => {
 	const [active, setActive] = useState('Search');
+
+	const [{ ItemProducts }, dispatch] = useStateValue();
 
 	return (
 		<div className="flex justify-between items-center px-32 w-full h-24 top-0 sticky z-50 bg-white">
@@ -54,16 +57,21 @@ const Navbar = () => {
 							<MdPersonPin className="text-black hover:text-red-600 transition-all duration-300 ease-in-out text-xl" />
 						</Link>
 					</li>
-					<li
-						className={`${
-							active === 'Shopping'
-								? 'px-2 py-2 bg-gray-300 rounded-full text-xl'
-								: ''
-						}`}
-						onClick={() => setActive('Shopping')}
-					>
-						<MdShoppingCart className="text-black hover:text-red-600 transition-all duration-300 ease-in-out text-xl" />
-					</li>
+					<Link to="/userCart">
+						<li
+							className={`${
+								active === 'Shopping'
+									? 'px-2 py-2 bg-gray-300 rounded-full text-xl'
+									: ''
+							} relative`}
+							onClick={() => setActive('Shopping')}
+						>
+							<span className="absolute bottom-4 left-5 bg-red-500 w-5 flex justify-center items-center rounded-full text-base">
+								{ItemProducts ? ItemProducts.length : 0}
+							</span>
+							<MdShoppingCart className="text-black hover:text-red-600 transition-all duration-300 ease-in-out text-xl" />
+						</li>
+					</Link>
 				</div>
 			</ul>
 		</div>
