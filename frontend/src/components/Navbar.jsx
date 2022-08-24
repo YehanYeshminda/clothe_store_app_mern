@@ -57,6 +57,8 @@ const Navbar = () => {
 							<MdPersonPin className="text-black hover:text-red-600 transition-all duration-300 ease-in-out text-xl" />
 						</Link>
 					</li>
+
+					{/* cart */}
 					<Link to="/userCart">
 						<li
 							className={`${
